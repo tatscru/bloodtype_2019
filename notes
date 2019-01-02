@@ -1,0 +1,42 @@
+Notes 
+
+
+**User types: What is your blood type?
+
+Shows a list of the different blood types
+
+1. Type O
+2. Type A
+3. Type B 
+4. Type AB 
+
+
+User has to click the number associated with thier bloodtype to receive more info-- foods to eat and avoid 
+
+
+1. Type O- If you are type O, like an estimated 46 percent of the population, the Eat Right 4 Your Type program suggests that you stay away from wheat, dairy, caffeine, and alcohol. Reach instead for fruits, vegetables, and lean, organic meats.
+
+2. Type A- People whose blood is type A are steered toward a vegetarian diet, including soy proteins, grains, and vegetables. They are also encouraged to eat organic and fresh food in as natural a state as possible.
+
+3. Type B- People whose blood is type B are identified as omnivores who can eat a variety of foods. They should avoid certain foods — like corn, wheat, buckwheat, lentils, tomatoes, peanuts, sesame seeds, and chicken — and instead opt for goat, lamb, mutton, rabbit, green vegetables, eggs, and low-fat dairy products
+
+4. Type AB- People whose blood is type AB should choose tofu, seafood like mahi-mahi and salmon, dairy like yogurt and kefir, and green vegetables like kale and broccoli. They should avoid caffeine, alcohol, and smoked and cured meats, and try to eat more small meals throughout the day, according to the diet.
+
+
+Would you like to explore what an eating plan will look like for you bloodtype? 
+
+Yes - iterate over that bloodtype so it can output the sample meal plan 
+No- asks, would you like to know about a different bloodtype? OR just exits and back to the main menu 
+
+
+
+
+Bloodtype info: 
+What is their blood type? 
+Foods to eat/avoid?
+Sample Menu  
+
+
+
+** once you type in the console Blood_types :: TYPES.types (need to change the name of one of these files)
+-- it will output the class method which you have called. 
