@@ -1,6 +1,6 @@
-require_relative "./bloodtype_2019/version"
-# require_relative "./bloodtype_2019/cli"
-# require_relative "./bloodtype_2019/types"
+require_relative "./bloodtype_2019/version.rb"
+require_relative "./bloodtype_2019/cli.rb"
+require_relative "./bloodtype_2019/types.rb"
 
 # module Bloodtype2019
 #   class Error < StandardError; end

@@ -3,7 +3,7 @@
 class Bloodtypes::CLI
 
   def call 
-    puts "The 4 different blood types"
+    puts "The 4 Different Blood Types"
     # lists_blood_types
 
   end 

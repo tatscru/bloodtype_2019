@@ -1,3 +1,3 @@
-module Bloodtype2019
+module Bloodtypes
   VERSION = "0.1.0"
 end
