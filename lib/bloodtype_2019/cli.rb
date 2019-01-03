@@ -32,8 +32,10 @@ DOC
           puts "More info on Type B..."
         when "4" 
          puts "More info on Type AB..."
+        when "list"
+          puts lists_blood_types
         else 
-          puts "Sorry, I did not understand your input. Enter a number 1-4 or type exit"
+          puts "Sorry, I did not understand your input. Enter a number 1-4, type list to see the different bloodtypes again, or type exit"
       end 
     end 
   end 
