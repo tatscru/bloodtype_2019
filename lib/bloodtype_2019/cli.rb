@@ -4,8 +4,10 @@ class Bloodtypes::CLI
 
   def call 
     lists_blood_types
-    foods 
+    prompt
     goodbye
+    # foods 
+    # goodbye
   end 
 
   def lists_blood_types
@@ -18,20 +20,21 @@ class Bloodtypes::CLI
 DOC
   end 
   
-  def foods 
+  def prompt
     puts "To learn more, enter the number associated with your blood type or type exit" 
     input = nil 
     while input != "exit"
       input = gets.strip 
       case input 
         when "1"
-         puts "More info on Type O..."
+        # puts "More info on Type O..."
+         
         when "2"
-          puts "More info on Type A..."
+          # puts "More info on Type A..."
         when "3" 
-          puts "More info on Type B..."
+          # puts "More info on Type B..."
         when "4" 
-         puts "More info on Type AB..."
+        # puts "More info on Type AB..."
         when "list"
           puts lists_blood_types
         else 
@@ -40,6 +43,18 @@ DOC
     end 
   end 
 
+    
+    def type_A
+      
+    end 
+    
+   AND/OR
+    
+    def full_list_of_bloodtypes
+      types.all {|b| b.name}.each do |b| puts "#{b.name} - #{b.foods} - #{b.menu}"
+      end 
+    end 
+    
 #   def sample_menu
 #   end 
 
