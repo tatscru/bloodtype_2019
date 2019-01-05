@@ -1,6 +1,6 @@
 require 'nokogiri'
 require 'open-uri'
-
+require 'pry'
 
 class Bloodtypes::TYPES
 
@@ -39,6 +39,7 @@ end
        end
     end
   end
+  menus 
 end
 
 
