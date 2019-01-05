@@ -1,27 +1,49 @@
+require 'nokogiri'
+require 'open-uri'
+
 class Bloodtypes::TYPES
 
-  attr_accessor :name, :foods, :menu 
+  # attr_accessor :name, :foods, :menu 
 
-
-  def self.types
-    self.scraped_bloodtypes
-  end 
-  
   def self.scraped_bloodtypes
+    doc = Nokogiri::HTML(open("https://www.everydayhealth.com/diet-nutrition/eat-right-for-your-type-diet.aspx"))
+    blood_types = doc.css("")
     
-#       def lists_blood_types
-#     puts "The 4 Different Blood Types:"
-#     puts <<DOC.gsub /^\s*/,"" 
-#     1. Type O
-#     2. Type A
-#     3. Type B
-#     4. Type AB
-# DOC
-#   end 
-
-def self.scrape
-  bloodtypes = []
+    blood_types.css('ul').each do |bloodtype|
+      blood_type_name = name.text
+      types = {}
+      ul = blood_type_name.next_sibling
+      ul.css('li').each do |li|
+        name, description = li.text.split(': ')
+      end 
+    end
+  end
 end 
+
+  def self.get_sample_menus
+    
+    doc = Nokogiri::HTML(open("https://www.everydayhealth.com/diet-nutrition/eat-right-for-your-type-diet.aspx"))
+    menu_node = doc.css('#samplemenu-section')
+
+  menus = {}
+  
+    menu_node.css('h3').each do |type_header|
+      type_name = type_header.text
+      meals = {}
+      ul = type_header.next_sibling
+      ul.css('li').each do |li|
+        meal, description = li.text.split(': ')
+        
+       end
+    end
+  end
+end
+
+
+
+
+
+
 
 
 
