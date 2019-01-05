@@ -1,15 +1,16 @@
 require 'nokogiri'
 require 'open-uri'
 
+
 class Bloodtypes::TYPES
 
   # attr_accessor :name, :foods, :menu 
 
   def self.scraped_bloodtypes
     doc = Nokogiri::HTML(open("https://www.everydayhealth.com/diet-nutrition/eat-right-for-your-type-diet.aspx"))
-    blood_types = doc.css("")
+    blood_types = doc.css("col-sm-12 col-md-12 col-lg-7 textComp__content")
     
-    blood_types.css('ul').each do |bloodtype|
+    blood_types.css('h2').each do |bloodtype|
       blood_type_name = name.text
       types = {}
       ul = blood_type_name.next_sibling
@@ -18,6 +19,7 @@ class Bloodtypes::TYPES
       end 
     end
   end
+  
 end 
 
   def self.get_sample_menus
