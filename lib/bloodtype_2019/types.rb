@@ -1,9 +1,12 @@
-class Bloodtypes::TYPES
+class Bloodtypes::Types
 
   # attr_accessor :name, :foods, :menu 
 
   def self.scraped_bloodtypes
     doc = Nokogiri::HTML(open("https://www.everydayhealth.com/diet-nutrition/eat-right-for-your-type-diet.aspx"))
+    
+    binding.pry 
+    
     blood_types = doc.css("col-sm-12 col-md-12 col-lg-7 textComp__content")
     
     blood_types.css('h2').each do |bloodtype|
@@ -15,7 +18,7 @@ class Bloodtypes::TYPES
       end 
     end
   end
-  
+end 
 end 
 
   def self.get_sample_menus
