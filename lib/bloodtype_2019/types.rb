@@ -1,7 +1,3 @@
-require 'nokogiri'
-require 'open-uri'
-require 'pry'
-
 class Bloodtypes::TYPES
 
   # attr_accessor :name, :foods, :menu 
