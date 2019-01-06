@@ -1,4 +1,4 @@
-class Bloodtypes::Types
+class Types
 
   # attr_accessor :name, :foods, :menu 
 
@@ -19,12 +19,12 @@ class Bloodtypes::Types
 end 
 
 
-  def self.get_sample_menus
+  def self.get_sample_menus(type)
     
     doc = Nokogiri::HTML(open("https://www.everydayhealth.com/diet-nutrition/eat-right-for-your-type-diet.aspx"))
     menu_node = doc.css('#samplemenu-section')
 
-  menus = {}
+    menus = {}
   
     menu_node.css('h3').each do |type_header|
       type_name = type_header.text
@@ -32,10 +32,11 @@ end
       ul = type_header.next_sibling
       ul.css('li').each do |li|
         meal, description = li.text.split(': ')
-        
+        menus[meal] = description
        end
     end
-    menus 
+   
+    puts "#{menus.keys[0]}: #{menus[menus.keys[0]]}"
   end
   
 # end

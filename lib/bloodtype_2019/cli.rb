@@ -1,6 +1,6 @@
 #Our CLI controller- business logic and user interactions 
 
-class Bloodtypes::CLI
+class CLI
 
   def call 
     lists_blood_types
@@ -11,52 +11,38 @@ class Bloodtypes::CLI
   end 
 
   def lists_blood_types
-    puts "The 4 Different Blood Types:"
-    puts <<DOC.gsub /^\s*/,"" 
-    1. Type O
-    2. Type A
-    3. Type B
-    4. Type AB
-DOC
+    
   end 
   
   def prompt
-    puts "To learn more, enter the number associated with your blood type or type exit" 
+    puts "To learn more, type the name of your blood type, list to output the bloodtype names, or type exit" 
+    sample_menu()
+    
     input = nil 
     while input != "exit"
-      input = gets.strip 
+      input = gets.strip.upcase 
       case input 
-        when "1"
-        # puts "More info on Type O..."
+        when "Type O "
          
-        when "2"
-          # puts "More info on Type A..."
-        when "3" 
-          # puts "More info on Type B..."
-        when "4" 
-        # puts "More info on Type AB..."
-        when "list"
+        when "Type A"
+          
+        when "Type B" 
+          
+        when "Type AB" 
+        
+        when "LIST"
           puts lists_blood_types
+        when "EXIT"
+          puts goodbye 
         else 
-          puts "Sorry, I did not understand your input. Enter a number 1-4, type list to see the different bloodtypes again, or type exit"
+          puts "Sorry, I did not understand your input. Reenter your bloodtype, type list to see the different bloodtypes again, or type exit"
       end 
     end 
   end 
-
     
-    # def type_A
-      
-    # end 
+  def sample_menu(type)
     
-  # AND/OR
-    
-    # def full_list_of_bloodtypes
-    #   types.all {|b| b.name}.each do |b| puts "#{b.name} - #{b.foods} - #{b.menu}"
-    #   end 
-    # end 
-    
-#   def sample_menu
-#   end 
+  end 
 
   def goodbye
     puts "Have a wonderful day!"
