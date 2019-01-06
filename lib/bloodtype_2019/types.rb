@@ -9,12 +9,12 @@ class Types
     foods = doc.css("#foodlist-section ul li")
     
     foods.each do |i| 
-      el = i.text.split(/[:(]/).strip
+      el = i.text.split(/[:(]/)
       @@blood_types << el[0].strip  
       @@blood_types << el[1].strip 
   end 
   @@blood_types
-  binding.pry 
+  # binding.pry 
 end 
 
 

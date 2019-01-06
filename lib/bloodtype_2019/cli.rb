@@ -18,6 +18,7 @@ class CLI
     puts @@scraped_bloodtypes[4]
     puts @@scraped_bloodtypes[6]
     
+    binding.pry 
   end 
   
   def prompt
