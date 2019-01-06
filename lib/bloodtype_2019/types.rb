@@ -19,7 +19,7 @@ class Bloodtypes::Types
     end
   end
 end 
-end 
+# end 
 
   def self.get_sample_menus
     
@@ -37,9 +37,10 @@ end
         
        end
     end
+    menus 
   end
-  menus 
-end
+  
+# end
 
 
 
@@ -80,7 +81,7 @@ end
     # type_ab.menu = 
   
   
-    bloodtypes
-  end 
+#     bloodtypes
+#   end 
   
-end 
+# end 
