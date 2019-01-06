@@ -5,21 +5,19 @@ class Bloodtypes::Types
   def self.scraped_bloodtypes
     doc = Nokogiri::HTML(open("https://www.everydayhealth.com/diet-nutrition/eat-right-for-your-type-diet.aspx"))
     
-    binding.pry 
+    blood_types = []
     
-    blood_types = doc.css("col-sm-12 col-md-12 col-lg-7 textComp__content")
+    foods = doc.css("#foodlist-section ul li")
     
-    blood_types.css('h2').each do |bloodtype|
-      blood_type_name = name.text
-      types = {}
-      ul = blood_type_name.next_sibling
-      ul.css('li').each do |li|
-        name, description = li.text.split(': ')
-      end 
-    end
-  end
+    foods.each do |i| 
+      el = i.text.split(/[:(]/)
+      blood_types << el[0].strip  
+      blood_types << el[1].strip 
+  end 
+  blood_types
+  binding.pry 
 end 
-# end 
+
 
   def self.get_sample_menus
     
@@ -84,4 +82,4 @@ end
 #     bloodtypes
 #   end 
   
-# end 
+end 
