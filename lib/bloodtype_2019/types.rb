@@ -1,26 +1,22 @@
-class Types
+class HealthScraper
 
- @@blood_types = []
+ @@meals = {}
  
   def self.scraped_bloodtypes
     doc = Nokogiri::HTML(open("https://www.everydayhealth.com/diet-nutrition/eat-right-for-your-type-diet.aspx"))
     foods = doc.css("#foodlist-section ul li")
-    
     foods.each do |i| 
-      el = i.text.split(/[:(]/)
-      @@blood_types << el[0].strip  
-      @@blood_types << el[1].strip 
+      bloodtype, description = i.text.split(/[:(]/)
+      @meals[bloodtype] = description
+    end 
+    @@meals
   end 
-  @@blood_types
-  # binding.pry 
-end 
-
-def self.types_array
-  @@blood_types
-end 
+  
+  def self.types_array
+    @@meals
+  end 
 
   def self.get_sample_menus
-    
     doc = Nokogiri::HTML(open("https://www.everydayhealth.com/diet-nutrition/eat-right-for-your-type-diet.aspx"))
     menu_node = doc.css('#samplemenu-section')
 
@@ -37,7 +33,6 @@ end
     end
     menus
   end
-  
 end
 
 

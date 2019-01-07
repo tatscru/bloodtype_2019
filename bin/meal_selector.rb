@@ -2,4 +2,4 @@
 
 require "./lib/bloodtype_2019"
 
-CLI.new.call
+MealSuggestor.new.suggest
