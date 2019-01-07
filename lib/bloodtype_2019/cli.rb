@@ -53,6 +53,7 @@ class CLI
 
   def goodbye
     puts "Have a wonderful day!"
+    exit 0 
   end 
 
 end 
