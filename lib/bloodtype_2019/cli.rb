@@ -31,6 +31,7 @@ class CLI
       case input 
         when "TYPE O"
          puts Types.types_array[1]
+        # sample_menu()
         when "TYPE A"
           puts Types.types_array[3]
         when "TYPE B" 
@@ -48,7 +49,7 @@ class CLI
   end 
     
   def sample_menu(type)
-    
+    Y/N
   end 
 
   def goodbye
