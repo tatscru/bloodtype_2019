@@ -2,14 +2,14 @@
 
 class MealSuggestor
   def initialize
-    @type = nil
+    @bloodtype_index = nil
   end 
 
   def suggest
     puts "Hello!"
     puts "Tell me your blood type so I can suggest the healthiest meal:"
     lists_blood_types
-    # prompt
+    prompt
     # sample_menu
   end 
 
@@ -18,10 +18,9 @@ class MealSuggestor
     Scraper.bloodtypes.each_with_index{|type, index| puts "#{index + 1}. #{type}" }
   end 
   
-  # def prompt
-  #   puts
-  #   puts "To learn more information, type your blood type name." 
-  #   @type = gets.strip
+  def prompt
+    input = gets.strip
+    Scraper.bloodtype_descriptions[input.to_i - 1]
   #   case @type.downcase
   #     when "type o"
   #       puts Scraper.blood_types[1]

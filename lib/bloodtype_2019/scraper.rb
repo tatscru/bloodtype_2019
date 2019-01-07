@@ -15,6 +15,10 @@ class Scraper
   def self.bloodtypes
     @@meals.map{|(type)| type }
   end 
+  
+  def self.bloodtype_descriptions
+    @@meals.map{|(type, description)| description }
+  end 
 
   def self.get_sample_menus
     doc = Nokogiri::HTML(open("https://www.everydayhealth.com/diet-nutrition/eat-right-for-your-type-diet.aspx"))
