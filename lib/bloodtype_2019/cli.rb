@@ -47,10 +47,9 @@ class CLI
     puts "Would you like to see a sample menu for #{@type}?"
     response = gets.downcase.strip
     if response.eql?('yes')
-      Types.get_sample_menus.each do |meal, menu|
-        puts meal
-        puts menu
-      end
+      Types.get_sample_menus.each do |meal, description|
+      puts "#{meal}: #{description}"
+      end 
     end
   end 
 
