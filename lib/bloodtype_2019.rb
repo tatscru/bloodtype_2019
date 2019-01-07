@@ -3,8 +3,8 @@ require 'open-uri'
 require 'pry'
 
 require_relative "./bloodtype_2019/version.rb"
-require_relative "./bloodtype_2019/cli.rb"
-require_relative "./bloodtype_2019/types.rb"
+require_relative "./bloodtype_2019/scraper.rb"
+require_relative "./bloodtype_2019/meal_suggestor.rb"
 
 # module Bloodtype2019
 #   class Error < StandardError; end

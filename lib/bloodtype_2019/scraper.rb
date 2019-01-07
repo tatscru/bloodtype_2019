@@ -1,19 +1,19 @@
-class HealthScraper
+class Scraper
 
  @@meals = {}
  
-  def self.scraped_bloodtypes
+  def self.fetch_bloodtype_info!
     doc = Nokogiri::HTML(open("https://www.everydayhealth.com/diet-nutrition/eat-right-for-your-type-diet.aspx"))
     foods = doc.css("#foodlist-section ul li")
     foods.each do |i| 
       bloodtype, description = i.text.split(/[:(]/)
-      @meals[bloodtype] = description
+      @@meals[bloodtype] = description
     end 
     @@meals
   end 
   
-  def self.types_array
-    @@meals
+  def self.bloodtypes
+    @@meals.map{|(type)| type }
   end 
 
   def self.get_sample_menus
