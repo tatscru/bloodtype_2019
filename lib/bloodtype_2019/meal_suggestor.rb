@@ -19,8 +19,13 @@ class MealSuggestor
   end 
   
   def prompt
-    input = gets.strip
-    Scraper.bloodtype_descriptions[input.to_i - 1]
+    input = gets.strip.to_i
+    description = Scraper.bloodtype_descriptions[input - 1]
+    unless input > 0 && description
+      puts "I don't think that's a valid blood type"
+      prompt
+      return
+    end
   #   case @type.downcase
   #     when "type o"
   #       puts Scraper.blood_types[1]
