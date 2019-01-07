@@ -19,7 +19,7 @@ def self.types_array
   @@blood_types
 end 
 
-  def self.get_sample_menus(type)
+  def self.get_sample_menus
     
     doc = Nokogiri::HTML(open("https://www.everydayhealth.com/diet-nutrition/eat-right-for-your-type-diet.aspx"))
     menu_node = doc.css('#samplemenu-section')
@@ -28,7 +28,6 @@ end
   
     menu_node.css('h3').each do |type_header|
       type_name = type_header.text.upcase
-      if type_name == type 
       meals = {}
       ul = type_header.next_sibling
       ul.css('li').each do |li|
@@ -37,7 +36,7 @@ end
       end
     end
    
-    puts "#{menus.keys[0]}: #{menus[menus.keys[0]]}"
+    # puts "#{menus.keys[0]}: #{menus[menus.keys[0]]}"
   end
   
 end

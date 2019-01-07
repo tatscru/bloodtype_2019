@@ -5,12 +5,13 @@ class CLI
   def call 
     lists_blood_types
     prompt
-    # sample_menu
+    sample_menu
     # goodbye
    
   end 
 
   def lists_blood_types
+    puts "\nHello!\n Below you will find a list of the four different bloodtype groups:"
     Types.scraped_bloodtypes 
     
     puts Types.types_array[0]
@@ -22,7 +23,7 @@ class CLI
   end 
   
    def prompt
-    puts "To learn more, type the name of your blood type or type list to output the bloodtype names again" 
+    puts "\bTo learn more information, type your blood type name." 
     
     case @type = gets.strip.downcase
       when "type o"
@@ -51,6 +52,7 @@ class CLI
         puts menu
       end
     end
+  end 
 
   def goodbye
     puts "Have a wonderful day!"
