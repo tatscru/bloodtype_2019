@@ -13,10 +13,10 @@ class CLI
   def lists_blood_types
     Types.scraped_bloodtypes 
     
-    puts @@scraped_bloodtypes[0]
-    puts @@scraped_bloodtypes[2]
-    puts @@scraped_bloodtypes[4]
-    puts @@scraped_bloodtypes[6]
+    puts @@blood_types[0]
+    puts @@blood_types[2]
+    puts @@blood_types[4]
+    puts @@blood_types[6]
     
     binding.pry 
   end 
@@ -30,13 +30,13 @@ class CLI
       input = gets.strip.upcase 
       case input 
         when "Type O "
-         
+         puts bloodtypes[1]
         when "Type A"
-          
+          puts bloodtypes[3]
         when "Type B" 
-          
+          puts bloodtypes[5]
         when "Type AB" 
-        
+          puts bloodtypes[7]
         when "LIST"
           puts lists_blood_types
         when "EXIT"
