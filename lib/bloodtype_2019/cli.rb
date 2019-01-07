@@ -6,8 +6,6 @@ class CLI
     lists_blood_types
     prompt
     sample_menu
-    # goodbye
-   
   end 
 
   def lists_blood_types
