@@ -4,39 +4,39 @@ class CLI
 
   def call 
     lists_blood_types
-    # prompt
-    # goodbye
-    # foods 
-    # goodbye
+    prompt
+    sample_menu
+    goodbye
+   
   end 
 
   def lists_blood_types
     Types.scraped_bloodtypes 
     
-    puts @@blood_types[0]
-    puts @@blood_types[2]
-    puts @@blood_types[4]
-    puts @@blood_types[6]
-    
-    binding.pry 
+    puts Types.types_array[0]
+    puts Types.types_array[2]
+    puts Types.types_array[4]
+    puts Types.types_array[6]
+
+    # binding.pry 
   end 
   
   def prompt
-    puts "To learn more, type the name of your blood type, list to output the bloodtype names, or type exit" 
+    puts "To learn more, type the name of your blood type or type list to output the bloodtype names again" 
     # sample_menu()
     
     input = nil 
     while input != "exit"
       input = gets.strip.upcase 
       case input 
-        when "Type O "
-         puts bloodtypes[1]
-        when "Type A"
-          puts bloodtypes[3]
-        when "Type B" 
-          puts bloodtypes[5]
-        when "Type AB" 
-          puts bloodtypes[7]
+        when "TYPE O"
+         puts Types.types_array[1]
+        when "TYPE A"
+          puts Types.types_array[3]
+        when "TYPE B" 
+          puts Types.types_array[5]
+        when "TYPE AB" 
+          puts Types.types_array[7]
         when "LIST"
           puts lists_blood_types
         when "EXIT"

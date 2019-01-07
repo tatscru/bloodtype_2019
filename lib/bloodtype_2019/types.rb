@@ -15,6 +15,9 @@ class Types
   # binding.pry 
 end 
 
+def self.types_array
+  @@blood_types
+end 
 
   def self.get_sample_menus(type)
     
