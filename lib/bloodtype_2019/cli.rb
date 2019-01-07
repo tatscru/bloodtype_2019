@@ -1,31 +1,30 @@
 #Our CLI controller- business logic and user interactions 
 
-class CLI
+class MealSuggestor
+  def initialize
+    @type = nil
+  end 
 
-  def call 
+  def suggest
+    puts "Hello!"
+    puts "Tell me your blood type so I can suggest the healthiest meal:"
     lists_blood_types
-    prompt
-    sample_menu
+    # prompt
+    # sample_menu
   end 
 
   def lists_blood_types
-    puts "\nHello!\n Below you will find a list of the four different bloodtype groups:"
-    Types.scraped_bloodtypes 
-    
-    puts Types.types_array[0]
-    puts Types.types_array[2]
-    puts Types.types_array[4]
-    puts Types.types_array[6]
-
-    # binding.pry 
+    HealthScraper.fetch_blood_type_info!
+    HealthScraper.blood_types.each{|type| puts type }
   end 
   
-   def prompt
-    puts "\bTo learn more information, type your blood type name." 
-    
-    case @type = gets.strip.downcase
+  def prompt
+    puts
+    puts "To learn more information, type your blood type name." 
+    @type = gets.strip
+    case @type.downcase
       when "type o"
-        puts Types.types_array[1]
+        puts HealthScraper.blood_types[1]
       when "type a"
         puts Types.types_array[3]
       when "type b"
@@ -54,6 +53,5 @@ class CLI
   def goodbye
     puts "Have a wonderful day!"
     exit 0 
-  end 
-
+  end
 end 
