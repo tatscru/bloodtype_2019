@@ -7,7 +7,7 @@ class MealSuggestor
 
   def suggest
     puts "Hello!"
-    puts "Tell me your blood type so I can suggest the healthiest meal:"
+    puts "Tell me your blood type so I can suggest the ideal meal plan for you:"
     lists_blood_types
     prompt
     sample_menu
@@ -38,12 +38,13 @@ class MealSuggestor
         puts lists_blood_types
       when "exit"
         puts goodbye 
-      else 
+      else
         puts "Sorry, I did not understand your input. Reenter your bloodtype, type list to see the different bloodtypes again, or type exit"
     end
   end 
     
   def sample_menu
+    puts 
     puts "Would you like to see a sample menu for #{@type}?"
     response = gets.downcase.strip
     if response.eql?('yes')
@@ -51,9 +52,11 @@ class MealSuggestor
       puts "#{meal}: #{description}"
       end 
     end
+    goodbye 
   end 
 
   def goodbye
+    puts 
     puts "Have a wonderful day!"
     exit 0 
   end
