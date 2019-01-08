@@ -3,11 +3,11 @@ class Scraper
  @@blood_types = []
  
   def self.fetch_bloodtypes
-    html = (open("https://www.everydayhealth.com/diet-nutrition/eat-right-for-your-type-diet.aspx"))
-    doc = Nokogiri::HTML(html)
+    doc = Nokogiri::HTML(open("https://www.everydayhealth.com/diet-nutrition/eat-right-for-your-type-diet.aspx"))
+    foods =  doc.css("#foodlist-section ul li")
     
     
-    doc.css("#foodlist-section ul li").each do |i| 
+   foods.each do |i| 
       el = i.text.split(/[:(]/)
       @@blood_types << el[0].strip  
       @@blood_types << el[1].strip 

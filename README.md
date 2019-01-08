@@ -3,23 +3,26 @@
 
 READ ME— 
 
-There are so many diets out there, have you ever thought of eating for your blood type? 
+There are so many diets out there, one of them being the bloodtype diet.  As with any new meal plan, one will need to evaluate thier previous diets and food trends, noting what has and has not worked.  Secondly, one will need to know their blood type group in order to present a proper sample menu. 
 
-First step, learning your blood type. Second, evaluating previous diet or food trends, noting what has and has not worked, and jotting down your goal for this new diet. 
+Many of us know, maintaining a nutritious food intake and exercise is one of the most important factors to living a healthy lifestyle. For some people, no matter how strictly they adhere to a diet, they do no seem to see a change in their body. A naturopathic physician proposed the idea that one's body processes food according to their blood type. If you know your blood type, we will walk through the beneficial foods and one's to avoid, along with a sample menu. 
 
-Now, how does it work?   
+## Usage
 
-Many of us know, maintaining a nutritious food intake and exercise is one of the most important factors to living a healthy lifestyle. For some people, no matter how strictly they adhere to a diet, they do no seem to see a change in their body. A naturopathic physician proposed the idea that one's body processes food according to their blood type. It is believed that when food is digested, chemical reactions take place in our gut, directly affecting our blood and the lining of our digestive tracts.
+**User types: Shows a list of the different blood types 
 
-People with specific blood types have certain stomach enzymes enabling them to process food differently. If you know your blood type, we will walk through beneficial foods, foods to avoid, and a sample menu. 
+Type O
+Type A 
+Type B 
+Type AB 
 
-Project Structure 
 
-**User types: What is your blood type?
+The program will prompt a user to submit the name of their blood type, outputting the bloodtype description.  
 
-Shows a list of the different blood types + food to eat and avoid 
+**description
 
-1. Type O- If you are type O, like an estimated 46 percent of the population, the Eat Right 4 Your Type program suggests that you stay away from wheat, dairy, caffeine, and alcohol. Reach instead for fruits, vegetables, and lean, organic meats.
+
+1. Type O - If you are type O, like an estimated 46 percent of the population, the Eat Right 4 Your Type program suggests that you stay away from wheat, dairy, caffeine, and alcohol. Reach instead for fruits, vegetables, and lean, organic meats.
 
 2. Type A- People whose blood is type A are steered toward a vegetarian diet, including soy proteins, grains, and vegetables. They are also encouraged to eat organic and fresh food in as natural a state as possible.
 
@@ -28,11 +31,39 @@ Shows a list of the different blood types + food to eat and avoid
 4. Type AB- People whose blood is type AB should choose tofu, seafood like mahi-mahi and salmon, dairy like yogurt and kefir, and green vegetables like kale and broccoli. They should avoid caffeine, alcohol, and smoked and cured meats, and try to eat more small meals throughout the day, according to the diet.
 
 
+**Prompt the user if they would like to see a sample menu based on the bloodtype submitted. 
 
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/bloodtype_2019`. To experiment with that code, run `bin/console` for an interactive prompt.
+Type O
+Breakfast: Two slices of organic bread with almond butter, vegetable juice, and a banana
+Lunch: A spinach salad with roast beef and fruit slices
+Snack: Fruit
+Dinner: Lamb stew with a variety of vegetables
+Dessert: Fruit salad
 
-TODO: Delete this and the text above, and describe your gem
+Type A
+Breakfast: Buckwheat pancakes topped with maple syrup, tahini, jam, or lemon juice
+Lunch: Curried peanut tempeh with carrots, celery, and broccoli
+Snack: Trail mix
+Dinner: Rice pasta with feta and greens
+Dessert: Crumb apple pie
+
+Type B
+Breakfast: Oatmeal with unsalted butter or ghee
+Lunch: Indian curry salad
+Snack: Kale chips
+Dinner: Apple-braised lamb shoulder chops
+Dessert: Carob fudge
+
+Type AB
+Breakfast: Silken tofu scramble with carrots and zucchini
+Lunch: Cream of mushroom soup
+Snack: White bean hummus with celery sticks
+Dinner: Grilled cod and veggies over apricot-walnut couscous
+Dessert: Flourless almond butter and raisin cookies
+
+
+
 
 ## Installation
 
@@ -50,9 +81,6 @@ Or install it yourself as:
 
     $ gem install bloodtype_2019
 
-## Usage
-
-TODO: Write usage instructions here
 
 ## Development
 
