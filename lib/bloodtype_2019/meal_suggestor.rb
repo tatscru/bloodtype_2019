@@ -40,6 +40,8 @@ class MealSuggestor
         puts goodbye 
       else
         puts "Sorry, I did not understand your input. Reenter your bloodtype, type list to see the different bloodtypes again, or type exit"
+        lists_blood_types
+        prompt
     end
   end 
     
