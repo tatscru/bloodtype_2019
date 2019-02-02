@@ -1,0 +1,30 @@
+{
+  "TYPE O": {
+    "Breakfast": "stuff",
+    "Snack": "Other Stuff",
+    "Lunch": "Yummy stuff",
+    "Dinner": "Tasty stuff",
+    "Dessert": "Addicting stuff"
+  },
+  "TYPE A": {
+    "Breakfast": "stuff",
+    "Snack": "Other Stuff",
+    "Lunch": "Yummy stuff",
+    "Dinner": "Tasty stuff",
+    "Dessert": "Addicting stuff"
+  },
+  "TYPE B": {
+    "Breakfast": "stuff",
+    "Snack": "Other Stuff",
+    "Lunch": "Yummy stuff",
+    "Dinner": "Tasty stuff",
+    "Dessert": "Addicting stuff"
+  },
+  "TYPE AB": {
+    "Breakfast": "stuff",
+    "Snack": "Other Stuff",
+    "Lunch": "Yummy stuff",
+    "Dinner": "Tasty stuff",
+    "Dessert": "Addicting stuff"
+  }
+}

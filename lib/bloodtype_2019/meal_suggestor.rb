@@ -14,7 +14,7 @@ class MealSuggestor
   end 
 
   def lists_blood_types
-    Scraper.fetch_bloodtypes
+    Bloodtype.gather_bloodtypes
     puts Scraper.bloodtypes[0]
     puts Scraper.bloodtypes[2]
     puts Scraper.bloodtypes[4]
@@ -37,7 +37,7 @@ class MealSuggestor
       when "list"
         puts lists_blood_types
       when "exit"
-        puts goodbye 
+        puts self.goodbye 
       else
         puts "Sorry, I did not understand your input. Reenter your bloodtype, type list to see the different bloodtypes again, or type exit"
         lists_blood_types

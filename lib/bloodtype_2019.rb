@@ -5,6 +5,7 @@ require 'pry'
 require_relative "./bloodtype_2019/version.rb"
 require_relative "./bloodtype_2019/scraper.rb"
 require_relative "./bloodtype_2019/meal_suggestor.rb"
+require_relative "./bloodtype_2019/bloodtype.rb"
 
 # module Bloodtype2019
 #   class Error < StandardError; end
