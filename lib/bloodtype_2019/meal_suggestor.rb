@@ -14,26 +14,22 @@ class MealSuggestor
   end 
 
   def lists_blood_types
-    Bloodtype.gather_bloodtypes
-    puts Scraper.bloodtypes[0]
-    puts Scraper.bloodtypes[2]
-    puts Scraper.bloodtypes[4]
-    puts Scraper.bloodtypes[6]
+    Bloodtype.print_all
   end 
   
   def prompt
     puts
     puts "To learn more information, type your blood type name." 
-    @type = gets.strip
-    case @type.downcase
-      when "type o"
-        puts Scraper.bloodtypes[1]
-      when "type a"
-        puts Scraper.bloodtypes[3]
-      when "type b"
-        puts Scraper.bloodtypes[5]
-      when "type ab" 
-        puts Scraper.bloodtypes[7]
+    @type = gets.strip.downcase.gsub(/\s/,"_")
+    case @type
+      when "type_o"
+        puts Bloodtype.all_hash[@type].description
+      when "type_a"
+        puts Bloodtype.all_hash[@type].description
+      when "type_b"
+        puts Bloodtype.all_hash[@type].description
+      when "type_ab" 
+        puts Bloodtype.all_hash[@type].description
       when "list"
         puts lists_blood_types
       when "exit"
@@ -46,15 +42,18 @@ class MealSuggestor
   end 
     
   def sample_menu
+    bloodtype = Bloodtype.all_hash[@type]
     puts 
-    puts "Would you like to see a sample menu for #{@type}?"
+    puts "Would you like to see a sample menu for #{bloodtype.name}?"
     response = gets.downcase.strip
     if response.eql?('yes')
-      Scraper.get_sample_menus.each do |meal, description|
-      puts "#{meal}: #{description}"
-      end 
+      bloodtype.print_menu
+    elsif response.eql?("no")  
+      goodbye
+    else 
+      puts "Sorry, I did not understand your input."
+      sample_menu
     end
-    goodbye 
   end 
 
   def goodbye

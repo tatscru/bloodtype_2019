@@ -1,21 +1,20 @@
 class Bloodtype
-  attr_accessor :name, :description, :breakfast, :lunch, :snack, :dinner, :dessert
+  attr_accessor :name, :description, :menu
 
-  @@all = []
+  @@all_hash = {}
 
   def initialize(name, description)
     @name = name 
     @description = description
-    @@all << self 
+    @@all_hash[name.downcase.gsub(/\s/,"_")] = self
   end 
 
-  def add_menu(menu)
-    @breakfast= menu["Breakfast"]
-    @lunch= menu["Lunch"]
-    @snack= menu["Snack"]
-    @dinner= menu["Dinner"]
-    @dessert= menu["Dessert"]
+  def print_menu
+    menu.each do |meal, description|
+      puts "#{meal}: #{description}"
+    end 
   end 
+
 
   def self.gather_bloodtypes
     types = Scraper.fetch_bloodtypes 
@@ -25,11 +24,17 @@ class Bloodtype
       Bloodtype.new(name, description).add_menu(menus[name.upcase])
     end 
 
-    binding.pry 
+    # binding.pry 
   end 
   
-  def self.all
-    @@all 
+  def self.print_all
+    all_hash.each_value do |bloodtype|
+      puts bloodtype.name 
+    end 
+  end 
+
+  def self.all_hash
+    @@all_hash 
   end 
 
 end 
