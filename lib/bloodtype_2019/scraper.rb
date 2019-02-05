@@ -19,7 +19,6 @@ class Scraper
   
     menu_node.css('h3').each do |type_header|
       type_name = type_header.text.upcase
-      # binding.pry 
       type = type_name.strip.downcase.gsub(/\s/,"_")
       menu = {}
       ul = type_header.next_sibling

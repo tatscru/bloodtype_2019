@@ -9,13 +9,6 @@ class Bloodtype
     @@all_hash[name.downcase.gsub(/\s/,"_")] = self
   end 
 
-  def print_menu
-    menu.each do |meal, description|
-      puts "#{meal}: #{description}"
-    end 
-  end 
-
-
   def self.gather_bloodtypes
     types = Scraper.fetch_bloodtypes 
     menus = Scraper.get_sample_menus
@@ -23,8 +16,12 @@ class Bloodtype
       name, description = i 
       Bloodtype.new(name, description).add_menu(menus[name.upcase])
     end 
-
-    # binding.pry 
+  end 
+  
+  def print_menu
+    menu.each do |meal, description|
+      puts "#{meal}: #{description}"
+    end 
   end 
   
   def self.print_all

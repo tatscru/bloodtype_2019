@@ -31,7 +31,7 @@ class MealSuggestor
       when "type_ab" 
         puts Bloodtype.all_hash[@type].description
       when "list"
-        puts lists_blood_types
+        puts Bloodtype.print_all
       when "exit"
         puts self.goodbye 
       else
@@ -44,7 +44,7 @@ class MealSuggestor
   def sample_menu
     bloodtype = Bloodtype.all_hash[@type]
     puts 
-    puts "Would you like to see a sample menu for #{bloodtype.name}?"
+    puts "Would you like to see a sample menu for #{bloodtype.name}? (Yes/No)"
     response = gets.downcase.strip
     if response.eql?('yes')
       bloodtype.print_menu
